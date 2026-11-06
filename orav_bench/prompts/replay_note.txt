@@ -1,0 +1,4 @@
+If the supplied blind comparison states that a candidate replayed the reference
+recording, its winner and gap there rank which candidate delivered the reference
+voice rather than raw acoustic closeness, so a replay can be described as close and
+still not be named the winner. This concerns the assigned speech reference only.

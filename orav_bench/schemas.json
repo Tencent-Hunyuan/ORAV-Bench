@@ -1,0 +1,2014 @@
+{
+  "judge": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "general_fidelity": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "A": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "visual_quality": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "evidence": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "assessed",
+                      "not_observable"
+                    ]
+                  },
+                  "severity": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "minor",
+                      "major",
+                      "severe"
+                    ]
+                  }
+                },
+                "required": [
+                  "evidence",
+                  "status",
+                  "severity"
+                ]
+              },
+              "audio_quality": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "evidence": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "assessed",
+                      "not_observable",
+                      "not_applicable"
+                    ]
+                  },
+                  "severity": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "minor",
+                      "major",
+                      "severe"
+                    ]
+                  }
+                },
+                "required": [
+                  "evidence",
+                  "status",
+                  "severity"
+                ]
+              },
+              "av_sync": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "evidence": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "assessed",
+                      "not_observable",
+                      "not_applicable"
+                    ]
+                  },
+                  "severity": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "minor",
+                      "major",
+                      "severe"
+                    ]
+                  }
+                },
+                "required": [
+                  "evidence",
+                  "status",
+                  "severity"
+                ]
+              }
+            },
+            "required": [
+              "visual_quality",
+              "audio_quality",
+              "av_sync"
+            ]
+          },
+          "B": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "visual_quality": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "evidence": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "assessed",
+                      "not_observable"
+                    ]
+                  },
+                  "severity": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "minor",
+                      "major",
+                      "severe"
+                    ]
+                  }
+                },
+                "required": [
+                  "evidence",
+                  "status",
+                  "severity"
+                ]
+              },
+              "audio_quality": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "evidence": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "assessed",
+                      "not_observable",
+                      "not_applicable"
+                    ]
+                  },
+                  "severity": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "minor",
+                      "major",
+                      "severe"
+                    ]
+                  }
+                },
+                "required": [
+                  "evidence",
+                  "status",
+                  "severity"
+                ]
+              },
+              "av_sync": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "evidence": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "assessed",
+                      "not_observable",
+                      "not_applicable"
+                    ]
+                  },
+                  "severity": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "minor",
+                      "major",
+                      "severe"
+                    ]
+                  }
+                },
+                "required": [
+                  "evidence",
+                  "status",
+                  "severity"
+                ]
+              }
+            },
+            "required": [
+              "visual_quality",
+              "audio_quality",
+              "av_sync"
+            ]
+          }
+        },
+        "required": [
+          "A",
+          "B"
+        ]
+      },
+      "per_reference": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "@image1": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "a_evidence": {
+                "type": "string",
+                "minLength": 1
+              },
+              "b_evidence": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence_sufficient": {
+                "type": "boolean"
+              },
+              "winner": {
+                "type": "string",
+                "enum": [
+                  "A",
+                  "B",
+                  "tie"
+                ]
+              }
+            },
+            "required": [
+              "a_evidence",
+              "b_evidence",
+              "evidence_sufficient",
+              "winner"
+            ]
+          },
+          "@audio1": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "a_evidence": {
+                "type": "string",
+                "minLength": 1
+              },
+              "b_evidence": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence_sufficient": {
+                "type": "boolean"
+              },
+              "winner": {
+                "type": "string",
+                "enum": [
+                  "A",
+                  "B",
+                  "tie"
+                ]
+              }
+            },
+            "required": [
+              "a_evidence",
+              "b_evidence",
+              "evidence_sufficient",
+              "winner"
+            ]
+          }
+        },
+        "required": [
+          "@image1",
+          "@audio1"
+        ]
+      },
+      "binding": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "a_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "b_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_sufficient": {
+            "type": "boolean"
+          },
+          "winner": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "tie"
+            ]
+          }
+        },
+        "required": [
+          "a_evidence",
+          "b_evidence",
+          "evidence_sufficient",
+          "winner"
+        ]
+      },
+      "instruction": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "a_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "b_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_sufficient": {
+            "type": "boolean"
+          },
+          "winner": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "tie"
+            ]
+          }
+        },
+        "required": [
+          "a_evidence",
+          "b_evidence",
+          "evidence_sufficient",
+          "winner"
+        ]
+      },
+      "usability": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "A": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "evidence": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence_sufficient": {
+                "type": "boolean"
+              },
+              "usable": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "evidence",
+              "evidence_sufficient",
+              "usable"
+            ]
+          },
+          "B": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "evidence": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence_sufficient": {
+                "type": "boolean"
+              },
+              "usable": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "evidence",
+              "evidence_sufficient",
+              "usable"
+            ]
+          }
+        },
+        "required": [
+          "A",
+          "B"
+        ]
+      },
+      "overall_task": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "a_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "b_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_sufficient": {
+            "type": "boolean"
+          },
+          "winner": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "tie"
+            ]
+          }
+        },
+        "required": [
+          "a_evidence",
+          "b_evidence",
+          "evidence_sufficient",
+          "winner"
+        ]
+      },
+      "quality_tiebreak": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "a_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "b_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_sufficient": {
+            "type": "boolean"
+          },
+          "winner": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "tie"
+            ]
+          }
+        },
+        "required": [
+          "a_evidence",
+          "b_evidence",
+          "evidence_sufficient",
+          "winner"
+        ]
+      },
+      "limitations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "general_fidelity",
+      "per_reference",
+      "binding",
+      "instruction",
+      "usability",
+      "overall_task",
+      "quality_tiebreak",
+      "limitations"
+    ]
+  },
+  "listener": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "heard_content": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "audio_state": {
+            "type": "string",
+            "enum": [
+              "audible",
+              "decoded_silence",
+              "no_audio_stream",
+              "not_observable"
+            ]
+          },
+          "transcript": {
+            "type": "string"
+          },
+          "events": {
+            "type": "array",
+            "maxItems": 12,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "start_s": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "end_s": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "description": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "start_s",
+                "end_s",
+                "description"
+              ]
+            }
+          }
+        },
+        "required": [
+          "evidence",
+          "audio_state",
+          "transcript",
+          "events"
+        ]
+      },
+      "per_reference": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "@audio1": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "reference_observation": {
+                "type": "string",
+                "minLength": 1
+              },
+              "candidate_observation": {
+                "type": "string",
+                "minLength": 1
+              },
+              "comparison_basis": {
+                "type": "string",
+                "enum": [
+                  "direct_auditory_comparison",
+                  "candidate_sound_absent",
+                  "not_observable"
+                ]
+              },
+              "evidence": {
+                "type": "string",
+                "minLength": 1
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "supported",
+                  "partial",
+                  "contradicted",
+                  "not_observable"
+                ]
+              }
+            },
+            "required": [
+              "reference_observation",
+              "candidate_observation",
+              "comparison_basis",
+              "evidence",
+              "status"
+            ]
+          }
+        },
+        "required": [
+          "@audio1"
+        ]
+      },
+      "auditory_instruction": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "supported",
+              "partial",
+              "contradicted",
+              "not_observable",
+              "not_required"
+            ]
+          }
+        },
+        "required": [
+          "evidence",
+          "status"
+        ]
+      },
+      "general_fidelity": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "audio_quality": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "evidence": {
+                "type": "string",
+                "minLength": 1
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "assessed",
+                  "not_observable",
+                  "not_applicable"
+                ]
+              },
+              "severity": {
+                "type": "string",
+                "enum": [
+                  "none",
+                  "minor",
+                  "major",
+                  "severe"
+                ]
+              }
+            },
+            "required": [
+              "evidence",
+              "status",
+              "severity"
+            ]
+          }
+        },
+        "required": [
+          "audio_quality"
+        ]
+      },
+      "limitations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "heard_content",
+      "per_reference",
+      "auditory_instruction",
+      "general_fidelity",
+      "limitations"
+    ]
+  },
+  "voice": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "reference_voice": {
+        "type": "string",
+        "minLength": 1
+      },
+      "candidates": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "A": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "heard_voice": {
+                "type": "string",
+                "minLength": 1
+              },
+              "shared_and_different": {
+                "type": "string",
+                "minLength": 1
+              },
+              "similarity": {
+                "type": "string",
+                "enum": [
+                  "close",
+                  "partial",
+                  "different",
+                  "unobservable"
+                ]
+              }
+            },
+            "required": [
+              "heard_voice",
+              "shared_and_different",
+              "similarity"
+            ]
+          },
+          "B": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "heard_voice": {
+                "type": "string",
+                "minLength": 1
+              },
+              "shared_and_different": {
+                "type": "string",
+                "minLength": 1
+              },
+              "similarity": {
+                "type": "string",
+                "enum": [
+                  "close",
+                  "partial",
+                  "different",
+                  "unobservable"
+                ]
+              }
+            },
+            "required": [
+              "heard_voice",
+              "shared_and_different",
+              "similarity"
+            ]
+          }
+        },
+        "required": [
+          "A",
+          "B"
+        ]
+      },
+      "comparison_evidence": {
+        "type": "string",
+        "minLength": 1
+      },
+      "observable": {
+        "type": "boolean"
+      },
+      "gap": {
+        "type": "string",
+        "enum": [
+          "none",
+          "small",
+          "material",
+          "large",
+          "unobservable"
+        ]
+      },
+      "winner": {
+        "type": "string",
+        "enum": [
+          "A",
+          "B",
+          "tie"
+        ]
+      },
+      "limitations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "reference_voice",
+      "candidates",
+      "comparison_evidence",
+      "observable",
+      "gap",
+      "winner",
+      "limitations"
+    ]
+  },
+  "transcript": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "transcript": {
+        "type": "string"
+      },
+      "speech_state": {
+        "type": "string",
+        "enum": [
+          "intelligible",
+          "partial",
+          "no_intelligible_speech",
+          "not_observable"
+        ]
+      },
+      "evidence": {
+        "type": "string",
+        "minLength": 1
+      },
+      "limitations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "transcript",
+      "speech_state",
+      "evidence",
+      "limitations"
+    ]
+  },
+  "judge_speech": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "speech_content_review": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "A": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "heard_transcript": {
+                "type": "string"
+              },
+              "target_quote": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "supported",
+                  "partial",
+                  "contradicted",
+                  "not_observable",
+                  "not_applicable"
+                ]
+              },
+              "evidence": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "heard_transcript",
+              "target_quote",
+              "status",
+              "evidence"
+            ]
+          },
+          "B": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "heard_transcript": {
+                "type": "string"
+              },
+              "target_quote": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "supported",
+                  "partial",
+                  "contradicted",
+                  "not_observable",
+                  "not_applicable"
+                ]
+              },
+              "evidence": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "heard_transcript",
+              "target_quote",
+              "status",
+              "evidence"
+            ]
+          }
+        },
+        "required": [
+          "A",
+          "B"
+        ]
+      },
+      "sound_evidence_review": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "accepted",
+              "conflict",
+              "unresolved"
+            ]
+          }
+        },
+        "required": [
+          "evidence",
+          "status"
+        ]
+      },
+      "general_fidelity": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "A": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "visual_quality": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "evidence": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "assessed",
+                      "not_observable"
+                    ]
+                  },
+                  "severity": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "minor",
+                      "major",
+                      "severe"
+                    ]
+                  }
+                },
+                "required": [
+                  "evidence",
+                  "status",
+                  "severity"
+                ]
+              },
+              "audio_quality": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "evidence": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "assessed",
+                      "not_observable",
+                      "not_applicable"
+                    ]
+                  },
+                  "severity": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "minor",
+                      "major",
+                      "severe"
+                    ]
+                  }
+                },
+                "required": [
+                  "evidence",
+                  "status",
+                  "severity"
+                ]
+              },
+              "av_sync": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "evidence": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "assessed",
+                      "not_observable",
+                      "not_applicable"
+                    ]
+                  },
+                  "severity": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "minor",
+                      "major",
+                      "severe"
+                    ]
+                  }
+                },
+                "required": [
+                  "evidence",
+                  "status",
+                  "severity"
+                ]
+              }
+            },
+            "required": [
+              "visual_quality",
+              "audio_quality",
+              "av_sync"
+            ]
+          },
+          "B": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "visual_quality": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "evidence": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "assessed",
+                      "not_observable"
+                    ]
+                  },
+                  "severity": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "minor",
+                      "major",
+                      "severe"
+                    ]
+                  }
+                },
+                "required": [
+                  "evidence",
+                  "status",
+                  "severity"
+                ]
+              },
+              "audio_quality": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "evidence": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "assessed",
+                      "not_observable",
+                      "not_applicable"
+                    ]
+                  },
+                  "severity": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "minor",
+                      "major",
+                      "severe"
+                    ]
+                  }
+                },
+                "required": [
+                  "evidence",
+                  "status",
+                  "severity"
+                ]
+              },
+              "av_sync": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "evidence": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "assessed",
+                      "not_observable",
+                      "not_applicable"
+                    ]
+                  },
+                  "severity": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "minor",
+                      "major",
+                      "severe"
+                    ]
+                  }
+                },
+                "required": [
+                  "evidence",
+                  "status",
+                  "severity"
+                ]
+              }
+            },
+            "required": [
+              "visual_quality",
+              "audio_quality",
+              "av_sync"
+            ]
+          }
+        },
+        "required": [
+          "A",
+          "B"
+        ]
+      },
+      "per_reference": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "@image1": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "a_evidence": {
+                "type": "string",
+                "minLength": 1
+              },
+              "b_evidence": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence_sufficient": {
+                "type": "boolean"
+              },
+              "winner": {
+                "type": "string",
+                "enum": [
+                  "A",
+                  "B",
+                  "tie"
+                ]
+              }
+            },
+            "required": [
+              "a_evidence",
+              "b_evidence",
+              "evidence_sufficient",
+              "winner"
+            ]
+          },
+          "@audio1": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "a_evidence": {
+                "type": "string",
+                "minLength": 1
+              },
+              "b_evidence": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence_sufficient": {
+                "type": "boolean"
+              },
+              "winner": {
+                "type": "string",
+                "enum": [
+                  "A",
+                  "B",
+                  "tie"
+                ]
+              }
+            },
+            "required": [
+              "a_evidence",
+              "b_evidence",
+              "evidence_sufficient",
+              "winner"
+            ]
+          }
+        },
+        "required": [
+          "@image1",
+          "@audio1"
+        ]
+      },
+      "binding": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "a_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "b_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_sufficient": {
+            "type": "boolean"
+          },
+          "winner": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "tie"
+            ]
+          }
+        },
+        "required": [
+          "a_evidence",
+          "b_evidence",
+          "evidence_sufficient",
+          "winner"
+        ]
+      },
+      "instruction": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "a_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "b_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_sufficient": {
+            "type": "boolean"
+          },
+          "winner": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "tie"
+            ]
+          }
+        },
+        "required": [
+          "a_evidence",
+          "b_evidence",
+          "evidence_sufficient",
+          "winner"
+        ]
+      },
+      "usability": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "A": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "evidence": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence_sufficient": {
+                "type": "boolean"
+              },
+              "usable": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "evidence",
+              "evidence_sufficient",
+              "usable"
+            ]
+          },
+          "B": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "evidence": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence_sufficient": {
+                "type": "boolean"
+              },
+              "usable": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "evidence",
+              "evidence_sufficient",
+              "usable"
+            ]
+          }
+        },
+        "required": [
+          "A",
+          "B"
+        ]
+      },
+      "overall_task": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "a_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "b_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_sufficient": {
+            "type": "boolean"
+          },
+          "winner": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "tie"
+            ]
+          }
+        },
+        "required": [
+          "a_evidence",
+          "b_evidence",
+          "evidence_sufficient",
+          "winner"
+        ]
+      },
+      "quality_tiebreak": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "a_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "b_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_sufficient": {
+            "type": "boolean"
+          },
+          "winner": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "tie"
+            ]
+          }
+        },
+        "required": [
+          "a_evidence",
+          "b_evidence",
+          "evidence_sufficient",
+          "winner"
+        ]
+      },
+      "limitations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "speech_content_review",
+      "sound_evidence_review",
+      "general_fidelity",
+      "per_reference",
+      "binding",
+      "instruction",
+      "usability",
+      "overall_task",
+      "quality_tiebreak",
+      "limitations"
+    ]
+  },
+  "judge_speech_conflict": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "speech_content_review": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "A": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "heard_transcript": {
+                "type": "string"
+              },
+              "target_quote": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "supported",
+                  "partial",
+                  "contradicted",
+                  "not_observable",
+                  "not_applicable"
+                ]
+              },
+              "evidence": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "heard_transcript",
+              "target_quote",
+              "status",
+              "evidence"
+            ]
+          },
+          "B": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "heard_transcript": {
+                "type": "string"
+              },
+              "target_quote": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "supported",
+                  "partial",
+                  "contradicted",
+                  "not_observable",
+                  "not_applicable"
+                ]
+              },
+              "evidence": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "heard_transcript",
+              "target_quote",
+              "status",
+              "evidence"
+            ]
+          }
+        },
+        "required": [
+          "A",
+          "B"
+        ]
+      },
+      "sound_evidence_review": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "accepted",
+              "conflict",
+              "unresolved"
+            ]
+          }
+        },
+        "required": [
+          "evidence",
+          "status"
+        ]
+      },
+      "general_fidelity": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "A": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "visual_quality": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "evidence": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "assessed",
+                      "not_observable"
+                    ]
+                  },
+                  "severity": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "minor",
+                      "major",
+                      "severe"
+                    ]
+                  }
+                },
+                "required": [
+                  "evidence",
+                  "status",
+                  "severity"
+                ]
+              },
+              "audio_quality": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "evidence": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "assessed",
+                      "not_observable",
+                      "not_applicable"
+                    ]
+                  },
+                  "severity": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "minor",
+                      "major",
+                      "severe"
+                    ]
+                  }
+                },
+                "required": [
+                  "evidence",
+                  "status",
+                  "severity"
+                ]
+              },
+              "av_sync": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "evidence": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "assessed",
+                      "not_observable",
+                      "not_applicable"
+                    ]
+                  },
+                  "severity": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "minor",
+                      "major",
+                      "severe"
+                    ]
+                  }
+                },
+                "required": [
+                  "evidence",
+                  "status",
+                  "severity"
+                ]
+              }
+            },
+            "required": [
+              "visual_quality",
+              "audio_quality",
+              "av_sync"
+            ]
+          },
+          "B": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "visual_quality": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "evidence": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "assessed",
+                      "not_observable"
+                    ]
+                  },
+                  "severity": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "minor",
+                      "major",
+                      "severe"
+                    ]
+                  }
+                },
+                "required": [
+                  "evidence",
+                  "status",
+                  "severity"
+                ]
+              },
+              "audio_quality": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "evidence": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "assessed",
+                      "not_observable",
+                      "not_applicable"
+                    ]
+                  },
+                  "severity": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "minor",
+                      "major",
+                      "severe"
+                    ]
+                  }
+                },
+                "required": [
+                  "evidence",
+                  "status",
+                  "severity"
+                ]
+              },
+              "av_sync": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "evidence": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "assessed",
+                      "not_observable",
+                      "not_applicable"
+                    ]
+                  },
+                  "severity": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "minor",
+                      "major",
+                      "severe"
+                    ]
+                  }
+                },
+                "required": [
+                  "evidence",
+                  "status",
+                  "severity"
+                ]
+              }
+            },
+            "required": [
+              "visual_quality",
+              "audio_quality",
+              "av_sync"
+            ]
+          }
+        },
+        "required": [
+          "A",
+          "B"
+        ]
+      },
+      "per_reference": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "@image1": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "a_evidence": {
+                "type": "string",
+                "minLength": 1
+              },
+              "b_evidence": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence_sufficient": {
+                "type": "boolean"
+              },
+              "winner": {
+                "type": "string",
+                "enum": [
+                  "A",
+                  "B",
+                  "tie"
+                ]
+              }
+            },
+            "required": [
+              "a_evidence",
+              "b_evidence",
+              "evidence_sufficient",
+              "winner"
+            ]
+          },
+          "@audio1": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "a_evidence": {
+                "type": "string",
+                "minLength": 1
+              },
+              "b_evidence": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence_sufficient": {
+                "type": "boolean"
+              },
+              "winner": {
+                "type": "string",
+                "enum": [
+                  "A",
+                  "B",
+                  "tie"
+                ]
+              }
+            },
+            "required": [
+              "a_evidence",
+              "b_evidence",
+              "evidence_sufficient",
+              "winner"
+            ]
+          }
+        },
+        "required": [
+          "@image1",
+          "@audio1"
+        ]
+      },
+      "binding": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "a_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "b_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_sufficient": {
+            "type": "boolean"
+          },
+          "winner": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "tie"
+            ]
+          }
+        },
+        "required": [
+          "a_evidence",
+          "b_evidence",
+          "evidence_sufficient",
+          "winner"
+        ]
+      },
+      "instruction": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "a_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "b_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_sufficient": {
+            "type": "boolean"
+          },
+          "winner": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "tie"
+            ]
+          }
+        },
+        "required": [
+          "a_evidence",
+          "b_evidence",
+          "evidence_sufficient",
+          "winner"
+        ]
+      },
+      "usability": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "A": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "evidence": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence_sufficient": {
+                "type": "boolean"
+              },
+              "usable": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "evidence",
+              "evidence_sufficient",
+              "usable"
+            ]
+          },
+          "B": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "evidence": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence_sufficient": {
+                "type": "boolean"
+              },
+              "usable": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "evidence",
+              "evidence_sufficient",
+              "usable"
+            ]
+          }
+        },
+        "required": [
+          "A",
+          "B"
+        ]
+      },
+      "overall_task": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "a_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "b_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_sufficient": {
+            "type": "boolean"
+          },
+          "winner": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "tie"
+            ]
+          }
+        },
+        "required": [
+          "a_evidence",
+          "b_evidence",
+          "evidence_sufficient",
+          "winner"
+        ]
+      },
+      "quality_tiebreak": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "a_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "b_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_sufficient": {
+            "type": "boolean"
+          },
+          "winner": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "tie"
+            ]
+          }
+        },
+        "required": [
+          "a_evidence",
+          "b_evidence",
+          "evidence_sufficient",
+          "winner"
+        ]
+      },
+      "limitations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "speech_content_review",
+      "sound_evidence_review",
+      "general_fidelity",
+      "per_reference",
+      "binding",
+      "instruction",
+      "usability",
+      "overall_task",
+      "quality_tiebreak",
+      "limitations"
+    ]
+  }
+}

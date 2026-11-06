@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "systems": ["system-a", "system-b"],
+  "tasks": [
+    {
+      "id": "example-motion",
+      "instruction": "Show the person in @image1 performing the movement demonstrated in @video1, in one continuous shot.",
+      "duration_s": 8,
+      "references": [
+        {"handle": "@image1", "role": "subject", "path": "../data/person.jpg"},
+        {"handle": "@video1", "role": "motion", "path": "../data/movement.mp4"}
+      ],
+      "candidates": {"system-a": "../data/system-a.mp4", "system-b": "../data/system-b.mp4"},
+      "diagnostics": {"reference_scope": {"@image1": "person"}}
+    }
+  ]
+}

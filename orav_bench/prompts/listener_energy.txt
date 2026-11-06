@@ -1,0 +1,12 @@
+MEASURED AUDIO ENERGY TIMELINES (not perceptual scores)
+These uniform-window RMS values are derived from each supplied source audio stream,
+with no silence trimming, gain change, channel downmix or sample-rate change. Each
+bin starts at start_s + index * window_s on that MEDIA's local playback timeline;
+the final bin can be shorter. dbFS is 20*log10(RMS), floored at -100 only for display.
+Stereo/channel energies are averaged, not phase-cancelling mixed waveforms.
+Use this auxiliary signal to locate energy changes in time, checking actual audio
+and video. It does not identify speech, event meaning, distortion, intent or quality.
+High/low energy is not itself a defect or a synchronization verdict; speech energy
+alone cannot establish lip sync. Do not infer any candidate must be different.
+Missing/unavailable measurements do not mean silence. Keep uncertain semantic or
+temporal correspondence uncertain. Actual audio remains supplied unchanged.
