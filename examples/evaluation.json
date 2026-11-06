@@ -1,0 +1,46 @@
+{
+  "models": {
+    "astra": {
+      "label": "GPT-6-Astra",
+      "api": "responses",
+      "model": "gpt-6-astra",
+      "base_url_env": "ORAV_ASTRA_BASE_URL",
+      "api_key_env": "ORAV_ASTRA_API_KEY",
+      "headers_env": "ORAV_ASTRA_HEADERS",
+      "reasoning_effort": "medium",
+      "max_output_tokens": 8192,
+      "requests_per_minute": 25,
+      "max_attempts": 3,
+      "timeout_s": 600
+    },
+    "chat-judge": {
+      "label": "Chat Completions Judge",
+      "api": "chat_completions",
+      "model": "YOUR-VISION-MODEL",
+      "base_url_env": "ORAV_CHAT_BASE_URL",
+      "api_key_env": "ORAV_CHAT_API_KEY",
+      "headers_env": "ORAV_CHAT_HEADERS",
+      "max_output_tokens": 8192,
+      "requests_per_minute": 25,
+      "max_attempts": 3,
+      "timeout_s": 600
+    },
+    "gemini": {
+      "label": "Gemini 3.1 Pro",
+      "api": "gemini",
+      "model": "gemini-3.1-pro-preview",
+      "base_url_env": "ORAV_GEMINI_BASE_URL",
+      "api_key_env": "ORAV_GEMINI_API_KEY",
+      "api_key_header": "x-goog-api-key",
+      "headers_env": "ORAV_GEMINI_HEADERS",
+      "reasoning_effort": "medium",
+      "temperature": 0.3,
+      "max_output_tokens": 32768,
+      "requests_per_minute": 25,
+      "max_attempts": 3,
+      "timeout_s": 600
+    }
+  },
+  "judge": "astra",
+  "listener": "gemini"
+}

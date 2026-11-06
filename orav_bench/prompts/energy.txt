@@ -1,0 +1,15 @@
+SOURCE-DERIVED CANDIDATE AUDIO ENERGY: physical timing only.
+You do not hear audio in this request. The following full uniform-window RMS values
+were decoded from each candidate's actual source sound, without trimming, gain,
+resampling or channel downmix. Each bin starts at start_s + index * window_s on that
+same candidate's local clock; the last bin may be shorter. Values are dBFS with a
+display floor at -100. Channel energies are averaged, not mixed waveforms.
+Use them to cross-check gross sound activity/timing alongside the explicitly fallible
+auditory report and your actual visual panels. An auditory interval is approximate,
+not exact word/phoneme/beat timing. Energy cannot identify speech, words, a sound
+source, music beats, distortion, speaker identity, intended correspondence or quality.
+Do not infer precise lip or beat sync from broad overlap. Preserve not_observable
+when a relevant relation is unresolved; do not manufacture replacement sound content
+or a visual cause to fit an energy change. Silence/no-stream and unknown are distinct.
+No energy threshold is a task/quality score. These are already-computed source facts,
+not another judge or a perceptual verdict. No audible media is supplied to you.

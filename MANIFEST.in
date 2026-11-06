@@ -1,0 +1,4 @@
+include CITATION.cff
+recursive-include examples *.json
+recursive-include assets *.png
+recursive-include scripts *.py

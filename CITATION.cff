@@ -1,0 +1,55 @@
+cff-version: 1.2.0
+message: If you use ORAV Bench, please cite the paper below.
+type: software
+title: ORAV Bench
+license: Apache-2.0
+authors:
+- given-names: Jiacheng
+  family-names: Hua
+  affiliation: College of AI, Tsinghua University; Tencent Hy
+- given-names: Xiaokun
+  family-names: Feng
+  affiliation: Tencent Hy
+- given-names: Jiaqi
+  family-names: Hua
+  affiliation: College of AI, Tsinghua University
+- given-names: Chang
+  family-names: Liu
+  affiliation: College of AI, Tsinghua University
+- given-names: Yilin
+  family-names: Wang
+  affiliation: College of AI, Tsinghua University
+- given-names: Biao
+  family-names: Wang
+  affiliation: Tencent Hy
+- given-names: Miao
+  family-names: Liu
+  affiliation: College of AI, Tsinghua University
+preferred-citation:
+  type: article
+  title: 'ORAV: Benchmarking Audio-Video Generation from Multimodal Contexts'
+  authors:
+  - given-names: Jiacheng
+    family-names: Hua
+    affiliation: College of AI, Tsinghua University; Tencent Hy
+  - given-names: Xiaokun
+    family-names: Feng
+    affiliation: Tencent Hy
+  - given-names: Jiaqi
+    family-names: Hua
+    affiliation: College of AI, Tsinghua University
+  - given-names: Chang
+    family-names: Liu
+    affiliation: College of AI, Tsinghua University
+  - given-names: Yilin
+    family-names: Wang
+    affiliation: College of AI, Tsinghua University
+  - given-names: Biao
+    family-names: Wang
+    affiliation: Tencent Hy
+  - given-names: Miao
+    family-names: Liu
+    affiliation: College of AI, Tsinghua University
+  journal: arXiv
+  year: 2026
+  url: https://arxiv.org/abs/2609.34843

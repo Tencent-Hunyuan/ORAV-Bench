@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "orav-bench"
+version = "0.1.0"
+description = "Reference-conditioned audio-video evaluation with ORAV Judge and diagnostic measurements"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+authors = [{name = "Jiacheng Hua"}, {name = "Xiaokun Feng"}, {name = "Jiaqi Hua"}, {name = "Chang Liu"}, {name = "Yilin Wang"}, {name = "Biao Wang"}, {name = "Miao Liu"}]
+dependencies = ["numpy>=1.26,<3", "Pillow>=10.2,<13", "jsonschema>=4.21,<5"]
+
+[project.urls]
+Repository = "https://github.com/Tencent-Hunyuan/ORAV-Bench"
+Paper = "https://arxiv.org/abs/2609.34843"
+
+[project.optional-dependencies]
+diagnostics = [
+  "torch>=2.6,<2.9", "torchvision>=0.21,<0.24", "torchaudio>=2.6,<2.9",
+  "transformers>=4.57,<5", "scipy>=1.12,<2", "librosa>=0.10.2,<1",
+  "open_clip_torch>=2.29,<4", "speechbrain>=1.0,<2", "onnxruntime>=1.18,<2",
+  "opencc-python-reimplemented>=0.1.7", "decord>=0.6", "PyYAML>=6,<7",
+  "timm>=1.0,<2", "huggingface_hub>=0.24,<1", "audiobox-aesthetics>=0.0.1",
+  "muq>=0.1", "easydict>=1.13", "einops>=0.8,<1",
+]
+dev = ["pytest>=8,<10", "ruff>=0.12", "build>=1.2"]
+
+[project.scripts]
+orav = "orav_bench.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["orav_bench*"]
+
+[tool.setuptools.package-data]
+orav_bench = ["schemas.json", "prompts/*.txt"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
