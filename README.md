@@ -10,7 +10,7 @@
 
 <p align="center"><sup>†</sup> Project lead    <sup>‡</sup> Corresponding author</p>
 
-<p align="center"><a href="https://arxiv.org/abs/2609.34843"><img src="https://img.shields.io/badge/arXiv-2609.34843-b31b1b.svg" alt="Paper: arXiv 2609.34843" /></a> <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache--2.0-blue.svg" alt="Code license: Apache-2.0" /></a> <a href="#quick-start"><img src="https://img.shields.io/badge/Python-3.11%20%7C%203.12-3776AB.svg" alt="Python 3.11 or 3.12" /></a></p>
+<p align="center"><a href="https://arxiv.org/abs/2609.34843"><img src="https://img.shields.io/badge/arXiv-2609.34843-b31b1b.svg" alt="Paper: arXiv 2609.34843" /></a> <a href="https://orav-bench.github.io/"><img src="https://img.shields.io/badge/Project-Page-2ea44f.svg" alt="Project page" /></a> <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache--2.0-blue.svg" alt="Code license: Apache-2.0" /></a> <a href="#quick-start"><img src="https://img.shields.io/badge/Python-3.11%20%7C%203.12-3776AB.svg" alt="Python 3.11 or 3.12" /></a></p>
 
 <p align="center"><a href="https://arxiv.org/abs/2609.34843">Paper</a>  ·  <a href="#quick-start">Quick start</a>  ·  <a href="#evaluation">Evaluation</a>  ·  <a href="#pointwise-diagnostics">Diagnostics</a>  ·  <a href="#contributing-model-outputs">Contribute</a>  ·  <a href="#citation">Citation</a></p>
 
@@ -22,7 +22,7 @@
 
 <p align="center"> <img src="assets/teaser.png" alt="ORAV combines subject, scene, motion, and speech references into an instructed audio-video event." width="100%" /> </p>
 
-This repository provides the **evaluation pipeline**: reference-aware pairwise judging, system ranking, and pointwise diagnostics. The Judge achieves **86.08% effective agreement** with human judgments on a **10% held-out subset** of the benchmark. Benchmark tasks and model generations are released separately: [ORAV-Bench](https://huggingface.co/datasets/ORAV-Bench/ORAV-Bench) and [ORAV-Bench-Artifacts](https://huggingface.co/datasets/ORAV-Bench/ORAV-Bench-Artifacts).
+This repository provides the **evaluation pipeline**: reference-aware pairwise judging, system ranking, and pointwise diagnostics. The Judge achieves **85.46% effective agreement** with human judgments on a **20% human-validation subset** of the benchmark. Benchmark tasks and model generations are released separately: [ORAV-Bench](https://huggingface.co/datasets/ORAV-Bench/ORAV-Bench) and [ORAV-Bench-Artifacts](https://huggingface.co/datasets/ORAV-Bench/ORAV-Bench-Artifacts).
 
 | Reference modality | Semantic roles                              |
 | ------------------ | ------------------------------------------- |
@@ -33,6 +33,8 @@ This repository provides the **evaluation pipeline**: reference-aware pairwise j
 ## Evaluation
 
 ORAV evaluates the contribution of each reference within the complete requested event. A visually blind Listener provides auditory evidence; the Judge compares that evidence with timestamped visual panels in both presentation orders.
+
+**Cross-judge validation.** Repeating the full 380-task evaluation with Gemini 4 Argon as Listener and GPT-6.1-Sol as Judge yields **96.53% pairwise agreement** with the primary Gemini-3.1-Pro + GPT-6-Astra evaluator on shared resolved comparisons, preserving the five-system ranking and eight of nine role leaders.
 
 **Demonstration.** In the illustrated case, Y realizes the defining motion more closely, while X better matches the camera. ORAV prefers Y based on its contribution to the complete instruction.
 
